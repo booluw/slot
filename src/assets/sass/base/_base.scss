@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {font-size: 62.5%;}
+
+body {
+  font-size: 1.6rem;
+  font-family: Comfortaa, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    font-weight: 600;
+  }
+}

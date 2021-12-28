@@ -1,0 +1,48 @@
+.form {
+
+  &--auth {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 2rem;
+    box-shadow: 0 0 1rem lighten($secondary-color, 40);
+    height: 90vh;
+    border-radius: 1rem;
+  }
+
+  &__logo {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0 0 5rem;
+    text-transform: lowercase;
+    color: $primary-color;
+
+    span {
+      display: block;
+      color: $secondary-color;
+      font-weight: 500;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__btn {
+    margin: 2rem 0 0;
+  }
+
+  &__paragraph {
+    margin-block-start: 5rem;
+  }
+
+  & .input-group {
+    min-width: 80%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .form {
+    
+    &--auth {
+      margin: 0;
+      padding: 5rem;
+    }
+  }
+}

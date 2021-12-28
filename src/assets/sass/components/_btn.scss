@@ -1,0 +1,39 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  outline: none;
+  border: .2rem solid $primary-color;
+  background-color: transparent;
+  color: $primary-color;
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-radius: .3rem;
+  box-shadow: 0 0 .5rem lighten($secondary-color, 10);
+  font-family: Comfortaa, sans-serif;
+  letter-spacing: .1rem;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    filter: grayscale(50%);
+  }
+
+  &--cta {
+    color: white;
+    background-color: $primary-color;
+    padding: 1.5rem 1rem;
+    text-transform: lowercase;
+    letter-spacing: .2rem;
+  }
+
+  &__icon {
+    margin-inline-start: 2rem;
+
+    &--rotate {
+      transform-origin: center;
+      animation: rotate 2s ease-in-out  infinite;
+    }
+  }
+}

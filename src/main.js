@@ -4,6 +4,10 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
+import './assets/css/bootstrap-grid.min.css'
+import './assets/css/lineicons.css'
+import './assets/css/main.css'
+
 Vue.config.productionTip = false
 
 new Vue({

@@ -1,0 +1,221 @@
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Comfortaa, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: #0E8B6B;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  src: url("./fonts/Comfortaa.ttf");
+}
+
+.btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 0.2rem solid #0E8B6B;
+  background-color: transparent;
+  color: #0E8B6B;
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-radius: .3rem;
+  -webkit-box-shadow: 0 0 0.5rem #91ab9c;
+          box-shadow: 0 0 0.5rem #91ab9c;
+  font-family: Comfortaa, sans-serif;
+  letter-spacing: .1rem;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
+}
+
+.btn--cta {
+  color: white;
+  background-color: #0E8B6B;
+  padding: 1.5rem 1rem;
+  text-transform: lowercase;
+  letter-spacing: .2rem;
+}
+
+.btn__icon {
+  -webkit-margin-start: 2rem;
+          margin-inline-start: 2rem;
+}
+
+.btn__icon--rotate {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: rotate 2s ease-in-out  infinite;
+          animation: rotate 2s ease-in-out  infinite;
+}
+
+.form--auth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5rem 2rem;
+  -webkit-box-shadow: 0 0 1rem #e8edea;
+          box-shadow: 0 0 1rem #e8edea;
+  height: 90vh;
+  border-radius: 1rem;
+}
+
+.form__logo {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0 0 5rem;
+  text-transform: lowercase;
+  color: #0E8B6B;
+}
+
+.form__logo span {
+  display: block;
+  color: #749582;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.form__btn {
+  margin: 2rem 0 0;
+}
+
+.form__paragraph {
+  -webkit-margin-before: 5rem;
+          margin-block-start: 5rem;
+}
+
+.form .input-group {
+  min-width: 80%;
+}
+
+@media screen and (min-width: 1200px) {
+  .form--auth {
+    margin: 0;
+    padding: 5rem;
+  }
+}
+
+.input-group {
+  padding: .5rem 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-margin-after: 3rem;
+          margin-block-end: 3rem;
+  border-bottom: 0.2rem solid #b8b8b8;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+.input-group:focus-within {
+  border-color: #0E8B6B;
+}
+
+.input-group__icon {
+  font-size: 3rem;
+  color: #0E8B6B;
+  width: 10%;
+}
+
+.input-group__input {
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-family: Comfortaa, sans-serif;
+  min-width: 70%;
+}
+
+.input-group__helper-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: lowercase;
+  cursor: pointer;
+  color: #0E8B6B;
+  font-weight: 500;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #d1faf0;
+  min-width: 20%;
+  border-radius: .5rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .input-group {
+    margin: 3rem 0 0;
+  }
+  .input-group__helper-text {
+    font-size: 1.6rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

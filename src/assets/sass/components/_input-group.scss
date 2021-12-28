@@ -1,0 +1,53 @@
+.input-group {
+  padding: .5rem 0;
+  display: inline-flex;
+  align-items: center;
+  margin-block-end: 3rem;
+  border-bottom: .2rem solid lighten(desaturate($secondary-color, 30), 20);
+  transition: 300ms ease-in-out;
+
+  &:focus-within {
+    border-color: $primary-color;
+  }
+
+  &__icon {
+    font-size: 3rem;
+    color: $primary-color;
+    width: 10%;
+  }
+
+  &__input {
+    outline: none;
+    border:  none;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    font-size: 1.6rem;
+    font-family: Comfortaa, sans-serif;
+    min-width: 70%;
+  }
+
+  &__helper-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: lowercase;
+    cursor: pointer;
+    color: $primary-color;
+    font-weight: 500;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: lighten($primary-color, 60);
+    min-width: 20%;
+    border-radius: .5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .input-group {
+    margin: 3rem 0 0;
+
+    &__helper-text {
+      font-size: 1.6rem;
+    }
+  }
+}
