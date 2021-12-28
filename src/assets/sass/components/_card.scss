@@ -1,0 +1,52 @@
+.card {  
+  border-bottom: .1rem solid rgba(lighten($secondary-color, 10), .4);
+  padding: 2rem 0;
+  margin-block-end: 1rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .lni {
+      color: $secondary-color;
+      padding: 1rem 0;
+      //transform: rotate(90deg)
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: 1.5rem;
+    color: $secondary-color;
+    font-size: 1.4rem;
+
+    & .lni {
+      font-size: 1.6rem;
+      transition: 300ms ease-in-out;
+
+      &:active {
+        transform: scale(1.5);
+      }
+    }
+  }
+
+  &__heading {
+
+    &::before {
+      font-family: LineIcons;
+      content: '\eb6e';
+      margin: 0 1rem 0 0;
+      color: $secondary-color;
+    }
+  }
+
+  &__paragraph {
+    margin-block: .7rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
+}
