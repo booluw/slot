@@ -1,0 +1,35 @@
+.nav {
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: .1rem solid rgba(lighten($secondary-color, 10), .4);
+  background-color: white;
+
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  &__link {
+    color: $secondary-color;
+    font-size: 2rem;
+    display: flex;
+    padding: 2rem;
+    border-top: .1rem solid transparent;
+    font-weight: 900;
+    transition: 300ms ease-in-out;
+
+    &--active {
+      border-color: currentColor;
+      color: $primary-color;
+    }
+
+    &--log-out {
+      color: crimson;
+    }
+  }
+}

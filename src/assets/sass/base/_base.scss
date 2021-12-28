@@ -22,3 +22,21 @@ a {
     font-weight: 600;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  body {
+
+    &::after {
+      position: fixed;
+      content: "please switch to a mobile device";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      backdrop-filter: blur(100px);
+    }
+  }
+}
