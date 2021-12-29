@@ -45,12 +45,12 @@ export default {
     ...mapActions(['registerUser']),
     registerNewUser() {
       this.loading = true
-      this.registerUser(this.user).then( response => {
-       // this.loading = false
-        console.log(response)
+      let user = this.user
+      this.registerUser(user).then( response => {
+        this.loading = false
+        this.$router.push('/')
       }).catch(error => {
-       // this.loading = false
-        console.log(error)
+       this.loading = false
       })
     }
   }

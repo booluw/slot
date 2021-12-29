@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import firebase from '@/firebaseinit.js'
+import firebase from '@/firebaseinit.js'
 
 Vue.use(VueRouter)
 
@@ -57,13 +57,13 @@ const router = new VueRouter({
   routes
 })
 
-/*router.beforeEach(async (to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
   if (requiresAuth && !await firebase.getCurrentUser()) {
     next('signin');
   } else {
     next()
   }
-})*/
+})
 
 export default router

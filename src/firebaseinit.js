@@ -12,7 +12,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-// firebase.analytics();
 
 firebase.getCurrentUser = () => {
   return new Promise ((resolve, reject) => {

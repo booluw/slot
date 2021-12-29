@@ -41,12 +41,48 @@ export default {
     ...mapActions(['signIn']),
     signUserIn() {
       this.loading = true
-      this.signIn(this.user).then( response => {
-       // this.loading = false
-        console.log(response)
+      this.signIn(this.user).then(() => {
+        this.loading = false
+        this.$router.push('/')
       }).catch(error => {
-       // this.loading = false
-        console.log(error)
+        switch (error.code) {
+          case 'auth/user-not-found': // USER ACCOUNT NOT FOUND
+            this.$swal({
+              'title': "We couldn't find your account",
+              'text': "We could not find an account with the email you provided. You can register a free account",
+              'icon': 'error',
+              'confirmButtonText': 'Go to register'
+            }).then(() => {
+              this.$router.push('/register')
+            })
+            break;
+
+            
+          case 'auth/wrong-password': // USER ACCOUNT NOT FOUND
+            this.$swal({
+              'title': 'Looks like you forgot your password',
+              'icon': 'error'
+            })
+            break;
+
+
+            
+          case 'auth/invalid-emal': // USER ACCOUNT NOT FOUND
+            this.$swal({
+              'title': 'Your email is invalid',
+              'icon': 'error'
+            })
+            break;
+  
+          default:
+            this.$swal({
+              'title': 'An error occured',
+              'text': 'Sorry, we could not trace this error to anything on our system.',
+              'icon': 'error'
+            })
+            break;
+        }
+        this.loading = false
       })
     }
   }
