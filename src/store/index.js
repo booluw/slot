@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import firebase from '@/firebaseinit.js'
+import moment from 'moment'
 
 var db = firebase.firestore()
 window.db = db
@@ -64,12 +65,21 @@ export default new Vuex.Store({
           });
       })
     },
+    logOut({ commit }) {
+      return new Promise((resolve, reject) => {
+        firebase.auth().signOut().then(() => {
+          resolve()
+        }).catch((error) => {
+          reject(error)
+        });
+      })
+    },
     // Adding new entry
     addNewSlot({ commit }, payload) {
       return new Promise((resolve, reject) => {
         let id = (Math.random() + 1).toString(36).substring(2);
         db.collection('slots').add({
-          date: new Date(),
+          date: moment().format(),
           author: firebase.auth().currentUser.uid,
           title: payload.title,
           text: payload.text,
@@ -80,6 +90,18 @@ export default new Vuex.Store({
         }).catch(error => {
           reject(error)
         })
+      })
+    },
+    fetchAllSlots({ commit }) {
+      let result = []
+      return new Promise((resolve, reject) => {
+        db.collection("slots").where("author", "==", firebase.auth().currentUser.uid)
+        .onSnapshot((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                result.push(doc.data());
+            });
+            resolve(result)
+        });
       })
     }
   }

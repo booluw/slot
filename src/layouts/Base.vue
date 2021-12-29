@@ -41,16 +41,25 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'BaseLayout',
-  data() {
-    return {
-      showOffers() {
-        alert('dunno what to do')
-      },
-      logUserOut() {
-        alert('Hello World')
-      }
+  methods: {
+    ...mapActions(['logOut']),
+    showOffers() {
+      alert('dunno what to do')
+    },
+    logUserOut() {
+      this.$swal({
+        'text': "signing out means you won't be able to use slot until you sign in again.",
+        'title': "You're about to be signed out",
+        'confirmButtonText': 'Yes, sign me out'
+      }).then(() => {
+        this.logOut().then(() => {
+          this.$router.push('/signin')
+        })
+      })
     }
   }
 }

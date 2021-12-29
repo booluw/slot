@@ -3,7 +3,8 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import VueSweetalert2 from 'vue-sweetalert2';
+import VueSweetalert2 from 'vue-sweetalert2'
+import moment from 'moment'
 
 export const bus = new Vue()
 
@@ -13,6 +14,7 @@ import './assets/css/main.css'
 import 'sweetalert2/dist/sweetalert2.min.css'
 
 Vue.config.productionTip = false
+Vue.prototype.moment = moment
 
 
 const options = {

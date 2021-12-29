@@ -392,6 +392,31 @@ a:hover {
   overflow: hidden;
 }
 
+.alert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto 0;
+  padding: 5rem 0;
+  text-align: center;
+  color: #749582;
+}
+
+.alert__img {
+  width: 15rem;
+}
+
+.alert__heading {
+  margin-block: 3rem 2rem;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;
