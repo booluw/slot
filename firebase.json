@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "dist",
+    "target": "slot",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -10,6 +10,9 @@
       </a>
     </header>
     <router-view />
+    <router-link to="/new" class="btn btn--fab">
+      <i class="lni lni-pencil"></i>
+    </router-link>
     <nav class="nav">
       <ul class="nav__list">
         <li>

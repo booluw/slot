@@ -19,6 +19,20 @@ const routes = [
         }
       }
     ]
+  },{
+    path: '/',
+    name: 'OtherPages',
+    component: () => import('../layouts/Others.vue'),
+    children: [
+      {
+        name: 'NewEntry',
+        path: '/new',
+        component: () => import('../views/NewEntry.vue'),
+        meta: {
+          requiresAuth: true
+        }
+      }
+    ]
   },
   {
     path: '/signin',

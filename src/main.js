@@ -4,6 +4,8 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
+export const bus = new Vue()
+
 import './assets/css/bootstrap-grid.min.css'
 import './assets/css/lineicons.css'
 import './assets/css/main.css'

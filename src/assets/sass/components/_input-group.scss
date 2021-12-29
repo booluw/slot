@@ -26,6 +26,24 @@
     min-width: 70%;
   }
 
+  &__textarea {
+    margin-block-start: 2rem;
+    height: 70vh;
+    width: 100%;
+    padding: 2rem;
+    font-size: 2rem;
+    font-family: Comfortaa, sans-serif;
+    outline: none;
+    border: .1rem solid lighten($secondary-color, 30);
+    border-radius: 1rem;
+    background-color: lighten($secondary-color, 47);
+    transition: 300ms ease-in-out;
+
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+
   &__helper-text {
     display: flex;
     align-items: center;

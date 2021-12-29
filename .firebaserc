@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "todooer"
+  },
+  "targets": {
+    "todooer": {
+      "hosting": {
+        "slot": [
+          "my-slots"
+        ]
+      }
+    }
   }
 }

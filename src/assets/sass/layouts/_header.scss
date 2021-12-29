@@ -35,4 +35,15 @@
     color: $primary-color;
     padding: .4rem 1rem;
   }
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    color: $primary-color;
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+
+    & .lni {margin-inline-end: 1rem;}
+  }
 }
