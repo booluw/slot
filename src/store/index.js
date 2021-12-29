@@ -40,7 +40,7 @@ export default new Vuex.Store({
           });
       })
     },
-    signIn({commit}, payload) {
+    signIn({ commit }, payload) {
       return new Promise((resolve, reject) => {
         firebase.auth().signInWithEmailAndPassword(payload.mail, payload.password)
           .then((userCredential) => {
@@ -53,15 +53,33 @@ export default new Vuex.Store({
           });
       })
     },
-    recoverPassword(payload) {
+    recoverPassword({ commit }, payload) {
       return new Promise((resolve, reject) => {
-        firebase.auth().sendPasswordResetEmail(email)
+        firebase.auth().sendPasswordResetEmail(payload.mail)
           .then(() => {
             resolve()
           })
           .catch((error) => {
             reject(error)
           });
+      })
+    },
+    // Adding new entry
+    addNewSlot({ commit }, payload) {
+      return new Promise((resolve, reject) => {
+        let id = (Math.random() + 1).toString(36).substring(2);
+        db.collection('slots').add({
+          date: new Date(),
+          author: firebase.auth().currentUser.uid,
+          title: payload.title,
+          text: payload.text,
+          location: 'Earth',
+          sid: id
+        }).then(() => {
+          resolve()
+        }).catch(error => {
+          reject(error)
+        })
       })
     }
   }

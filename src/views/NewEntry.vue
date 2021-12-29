@@ -11,7 +11,10 @@
         <i class="input-group__icon lni lni-pencil"></i>
         <input type="text" v-model="slot.title" class="input-group__input" />
       </label>
-      <button class="btn btn--cta btn--full-width" @click="submitSlot" :disabled="slot.title.length < 5">add new entry</button>
+      <button class="btn btn--cta btn--full-width" @click="submitSlot()" :disabled="slot.title.length < 5 || loading">
+        add new entry
+        <i class="btn__icon btn__icon--rotate lni lni-spinner" v-if="loading"></i>
+      </button>
       <br />
       <a href="#back" @click.prevent="step -= 1" class="btn btn--text-only btn--full-width">go back to edit</a>
     </template>
@@ -30,16 +33,23 @@ export default {
         text: '',
         title: ''
       },
-      step: 0
+      step: 0,
+      loading: false
     }
   },
   methods: {
     ...mapActions(['addNewSlot']),
     submitSlot() {
+      this.loading = true
       this.addNewSlot(this.slot).then( response => {
-        console.log(response)
+        this.loading = false
+        this.$router.push('/')
       }).catch( error => {
-        console.log(error)
+        this.$swal({
+          'title': 'An error occured',
+          'text': error.message,
+          'icon': 'error'
+        })
       })
     }
   },
