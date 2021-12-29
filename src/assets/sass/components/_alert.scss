@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin: auto 0;
-  padding: 5rem 0;
+  padding: 5rem 2rem;
   text-align: center;
   color: $secondary-color;
 
@@ -14,4 +14,6 @@
   &__heading {
     margin-block: 3rem 2rem;
   }
+
+  &__link {color: $primary-color;}
 }

@@ -404,7 +404,7 @@ a:hover {
       -ms-flex-align: center;
           align-items: center;
   margin: auto 0;
-  padding: 5rem 0;
+  padding: 5rem 2rem;
   text-align: center;
   color: #749582;
 }
@@ -415,6 +415,10 @@ a:hover {
 
 .alert__heading {
   margin-block: 3rem 2rem;
+}
+
+.alert__link {
+  color: #0E8B6B;
 }
 
 .header {
