@@ -1,0 +1,13 @@
+[debug] [2022-01-21T04:02:27.250Z] ----------------------------------------------------------------------
+[debug] [2022-01-21T04:02:27.252Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Booluw\AppData\Local\Yarn\Data\global\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-01-21T04:02:27.253Z] CLI Version:   10.0.1
+[debug] [2022-01-21T04:02:27.253Z] Platform:      win32
+[debug] [2022-01-21T04:02:27.253Z] Node Version:  v16.13.1
+[debug] [2022-01-21T04:02:27.258Z] Time:          Fri Jan 21 2022 05:02:27 GMT+0100 (West Africa Standard Time)
+[debug] [2022-01-21T04:02:27.258Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-21T04:02:27.318Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-21T04:02:27.318Z] > authorizing via signed-in user (jaycewap@gmail.com)
+[debug] [2022-01-21T04:02:27.318Z] [iam] checking project todooer for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-01-21T04:02:27.321Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/todooer:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}

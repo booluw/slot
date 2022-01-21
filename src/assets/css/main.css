@@ -445,6 +445,11 @@ a:hover {
   text-align: justify;
 }
 
+.article__paragraph::first-letter {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;

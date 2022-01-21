@@ -20,5 +20,10 @@
     border-top: .1rem dashed darken($primary-color, 20);
     white-space: pre-line;
     text-align: justify;
+
+    &::first-letter {
+      font-size: 3rem;
+      font-weight: 900;
+    }
   }
 }

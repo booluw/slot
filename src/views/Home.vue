@@ -16,7 +16,7 @@
           <div>
             <i class="lni lni-alarm-clock"></i> {{ moment(slot.date).calendar() }}
           </div>
-          <div @click="shareThis()">
+          <div @click="shareThis(slot)">
             <i class="lni lni-share-alt-1"></i>
           </div>
         </div>
@@ -51,8 +51,19 @@ export default {
     openThis(slot) {
       this.$router.push(`/view/${ slot.author }/${ slot.sid }`)
     },
-    shareThis() {
-      alert('Sharing a slot')
+    shareThis(slot) {
+      let trimmedString = slot.text
+      const data = {
+        title: slot.title,
+        text: trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))),
+        url: `https://my-slots.web.app/view/${ slot.author }/${ slot.sid }`
+      }
+
+      try {
+        navigator.share(data)
+      } catch (error) {
+        console.log(error)
+      }
     },
     fromThisLocation() {
       alert('Showing all slots from this location')
