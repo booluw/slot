@@ -10,7 +10,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user: {}
+    user: {},
+    toEditData: {}
   },
   mutations: {
     SAVE_USER_DATA (state, payload) {
@@ -19,6 +20,9 @@ export default new Vuex.Store({
     MULTATION_DUMP (state, payload) {
       console.log(state)
       console.log(payload)
+    },
+    EDIT_SLOT (state, payload) {
+      state.toEditData = payload
     }
   },
   actions: {
@@ -92,6 +96,30 @@ export default new Vuex.Store({
         })
       })
     },
+    // Saving editted slots
+    editSlot({ commit }, payload) {
+      return new Promise((resolve, reject) => {
+        // First we search for the docRef using the date of the slot
+        let ref = ''
+        db.collection('slots').where("date", "==", payload.date).get().then( querySnapshot => {
+          querySnapshot.forEach( doc => {
+            let dump = doc.data()
+            if(dump.title === payload.title && dump.author === payload.author) {
+              ref = doc.id
+              // Verified that the payload is same as fetched slot.
+              db.collection('slots').doc(ref).update({
+                text: payload.text
+              }).then( ()=> {
+                resolve()
+              })
+            }
+          })
+        }).catch( error => {
+          reject(error)
+        })
+      })
+    },
+    // Fetching all slots
     fetchAllSlots({ commit }) {
       let result = []
       return new Promise((resolve, reject) => {

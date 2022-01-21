@@ -4,7 +4,7 @@
       <div class="card" v-for="slot in slots" :key="slot.sid">
         <div class="card__header">
           <h3 class="card__heading" @click="openThis()">{{ slot.title }}</h3>
-          <i class="lni lni-pencil" @click="editThis()"></i>
+          <i class="lni lni-pencil" @click="editThis(slot)"></i>
         </div>
         <p class="card__paragraph" @click="openThis()">
           {{ slot.text }}
@@ -36,7 +36,7 @@
 
 <script>
 // @ is an alias to /src
-import { mapActions } from 'vuex'
+import { mapActions, mapMutations } from 'vuex'
 
 export default {
   name: 'Home',
@@ -47,6 +47,7 @@ export default {
   },
   methods: {
     ...mapActions(['fetchAllSlots']),
+    ...mapMutations(['EDIT_SLOT']),
     openThis() {
       alert('Openning a slot')
     },
@@ -56,12 +57,12 @@ export default {
     fromThisLocation() {
       alert('Showing all slots from this location')
     },
-    editThis() {
-      alert('Editting a slot')
+    editThis(slot) {
+      this.EDIT_SLOT(slot)
+      this.$router.push('/edit')
     },
     fetchData() {
       this.fetchAllSlots().then( response => {
-        console.log('Data retrieved successfully')
         this.slots = response
       })
     }

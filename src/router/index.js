@@ -47,7 +47,15 @@ const routes = [
         meta: {
           requiresAuth: true
         }
-      }
+      },
+      {
+        name: 'Editslot',
+        path: '/edit',
+        component: () => import('../views/EditSlot.vue'),
+        meta: {
+          requiresAuth: true
+        }
+      },
     ]
   },
   {
@@ -70,7 +78,10 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0, behavior: 'smooth' };
+  }
 })
 
 router.beforeEach(async (to, from, next) => {
