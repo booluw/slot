@@ -28,9 +28,9 @@ export default {
     }
   },
   created() {
-      bus.$on('pageTitle', (data) => {
-        this.title = data
-      })
+    bus.$on('pageTitle', (data) => {
+      this.title = data
+    })
   }
 }
 </script>

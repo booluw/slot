@@ -26,6 +26,13 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    getUserLocationViaIP({ commit }) {
+      return new Promise((resolve, reject) => {
+        fetch('https://corsanywhere.herokuapp.com/https://geolocation-db.com/json')
+        .then(response => response.json())
+        .then(data => resolve(data));
+      })
+    },
     registerUser({ commit }, payload) {
       console.log(payload.mail)
       return new Promise((resolve, reject) => {
@@ -79,7 +86,14 @@ export default new Vuex.Store({
       })
     },
     // Adding new entry
-    addNewSlot({ commit }, payload) {
+    addNewSlot({ commit, dispatch }, payload) {
+      let city = "Slot City"
+      
+      dispatch('getUserLocationViaIP').then(response => {
+        // Fallback for Chrome adblocker issues
+        city = response.city == 'Not found' ? city : response.city 
+      })
+
       return new Promise((resolve, reject) => {
         let id = (Math.random() + 1).toString(36).substring(2);
         db.collection('slots').add({
@@ -87,7 +101,7 @@ export default new Vuex.Store({
           author: firebase.auth().currentUser.uid,
           title: payload.title,
           text: payload.text,
-          location: 'Earth',
+          location: city,
           sid: id
         }).then(() => {
           resolve()
@@ -130,6 +144,22 @@ export default new Vuex.Store({
             });
             resolve(result)
         });
+      })
+    },
+    // Fetch single slot
+    fetchSlot({ commit }, payload) {
+      return new Promise((resolve, reject) => {
+        db.collection('slots').where("sid", "==", payload.sid).get().then( querySnapshot => {
+          querySnapshot.forEach(doc => {
+            let temp = doc.data()
+            // Just to prove if the user is same.
+            if(temp.author = payload.author) {
+              resolve(doc.data())
+            }
+          });
+        }).catch( error => {
+          reject(error)
+        })
       })
     }
   }

@@ -421,6 +421,30 @@ a:hover {
   color: #0E8B6B;
 }
 
+.article {
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.article__header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 1rem 0 2rem;
+}
+
+.article__text--faint {
+  color: #10a27d;
+}
+
+.article__paragraph {
+  padding: 2rem 0 0;
+  border-top: 0.1rem dashed #052e24;
+  white-space: pre-line;
+  text-align: justify;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;

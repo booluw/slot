@@ -1,0 +1,24 @@
+.article {
+  padding: 2rem 1rem;
+  position: relative;
+  
+  &__header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 1rem 0 2rem;
+  }
+
+  &__text {
+    &--faint {
+      color: lighten($primary-color, 5);
+    }
+  }
+
+  &__paragraph {
+    padding: 2rem 0 0;
+    border-top: .1rem dashed darken($primary-color, 20);
+    white-space: pre-line;
+    text-align: justify;
+  }
+}

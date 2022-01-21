@@ -59,6 +59,14 @@ const routes = [
     ]
   },
   {
+    path: '/view/:author/:sid',
+    name: 'ViewPage',
+    component: () => import('../views/ViewSlot.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '/signin',
     name: 'SignIn',
     component: () => import(/* webpackChunkName: "auth" */ '../views/SignIn.vue')
