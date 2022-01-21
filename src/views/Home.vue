@@ -52,7 +52,9 @@ export default {
       this.$router.push(`/view/${ slot.author }/${ slot.sid }`)
     },
     shareThis(slot) {
-      let trimmedString = slot.text
+      let word = slot.text
+      const maxLength = 600
+      let trimmedString = word.substr(0, maxLength);
       const data = {
         title: slot.title,
         text: trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))),
