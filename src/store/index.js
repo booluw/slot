@@ -88,7 +88,7 @@ export default new Vuex.Store({
     // Adding new entry
     addNewSlot({ commit, dispatch }, payload) {
       let city = "Slot City"
-      
+
       dispatch('getUserLocationViaIP').then(response => {
         // Fallback for Chrome adblocker issues
         city = response.city == 'Not found' ? city : response.city 
@@ -138,6 +138,7 @@ export default new Vuex.Store({
       let result = []
       return new Promise((resolve, reject) => {
         db.collection("slots").where("author", "==", firebase.auth().currentUser.uid)
+        .orderBy("date", "desc")
         .onSnapshot((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 result.push(doc.data());
