@@ -16,11 +16,11 @@
   }
 
   &__profile {
-    padding: .4rem 1rem;
+    padding: .5rem 1.2rem;
     font-size: 2rem;
     font-weight: 900;
     color: $primary-color;
-    border-radius: 50%;
+    border-radius: 1rem;//50%;
     background-color: transparent;
     box-shadow: 0 0 .3rem rgba(lighten($secondary-color, 10), 1);
 

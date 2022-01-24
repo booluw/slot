@@ -5,7 +5,9 @@
         <a href="#back" @click="goBack()" class="header__link">
           <i class="lni lni-chevron-left"></i>
         </a>
-        {{ slot.title }}
+        <div :title="slot.title" style="width: 250px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+          {{ slot.title }}
+        </div>
       </div>
     </header>
     <section class="section">

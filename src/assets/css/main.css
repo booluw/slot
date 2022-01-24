@@ -126,7 +126,7 @@ a:hover {
   bottom: 8rem;
   right: 2rem;
   color: white;
-  border-radius: 50%;
+  border-radius: 2rem;
   font-weight: 900;
   background-color: #0E8B6B;
   padding: 1.5rem;
@@ -476,11 +476,11 @@ a:hover {
 }
 
 .header__profile {
-  padding: .4rem 1rem;
+  padding: .5rem 1.2rem;
   font-size: 2rem;
   font-weight: 900;
   color: #0E8B6B;
-  border-radius: 50%;
+  border-radius: 1rem;
   background-color: transparent;
   -webkit-box-shadow: 0 0 0.3rem #91ab9c;
           box-shadow: 0 0 0.3rem #91ab9c;

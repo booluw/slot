@@ -54,11 +54,15 @@ export default {
       this.$swal({
         'text': "signing out means you won't be able to use slot until you sign in again.",
         'title': "You're about to be signed out",
-        'confirmButtonText': 'Yes, sign me out'
-      }).then(() => {
-        this.logOut().then(() => {
-          this.$router.push('/signin')
-        })
+        'confirmButtonText': 'Yes, sign me out',
+        dangerMood: true,
+        buttons: true,
+      }).then((response) => {
+        if(response.isConfirmed) {
+          this.logOut().then(() => {
+            this.$router.push('/signin')
+          })
+        }
       })
     }
   }

@@ -35,7 +35,8 @@ const routes = [
         }
       }
     ]
-  },{
+  },
+  {
     path: '/',
     name: 'OtherPages',
     component: () => import('../layouts/Others.vue'),
@@ -57,6 +58,14 @@ const routes = [
         }
       },
     ]
+  },
+  {
+    path: '/profile',
+    name: 'profilePages',
+    component: () => import('../views/ProfilePage.vue'),
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/view/:author/:sid',
