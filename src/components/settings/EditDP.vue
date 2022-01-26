@@ -15,7 +15,7 @@
           @change="handleFileChange"  
         />
         </label>
-      <button class="btn btn--full-width" type="submit">
+      <button class="btn btn--cta btn--full-width" type="submit">
         submit
         <i class="btn__icon btn__icon--rotate lni lni-spinner" v-if="loading"></i>
       </button>

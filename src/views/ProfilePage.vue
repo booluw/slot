@@ -5,7 +5,7 @@
         <a href="#back" @click="goBack()" class="header__link">
           <i class="lni lni-chevron-left"></i>
         </a>
-        <div class="dropdown">
+        <!--- div class="dropdown">
           <a href="#" @click.prevent class="dropdown__toggler">
             <i class="lni lni-more-alt"></i>
           </a>
@@ -19,7 +19,7 @@
               Settings
             </router-link>
           </div>
-        </div>
+        </div --->
       </div>
     </header>
     <section class="section profile">
@@ -35,6 +35,24 @@
         <h1 class="profile__heading">{{ user.fullname || 'John Doe' }}</h1>
         <h3 class="profile__heading profile__heading--small">@{{ user.displayName || 'Dummy' }}</h3>
       </section>
+    </section>
+    <section class="section profile">
+      <h2 class="section__heading">actions</h2>
+      <br />
+      <div class="section__row-scroll">
+        <div class="col-10">
+          <a href="#" @click.prevent="editModal = true" class="card card--profile">
+            <h3 class="card__heading">change profile picture</h3>
+            <i class="lni lni-gallery card__icon"></i>
+          </a>
+        </div>
+        <div class="col-10">
+          <router-link to="/settings" class="card card--profile">
+            <h3 class="card__heading">change account settings</h3>
+            <i class="lni lni-cogs card__icon" style="transform: rotate(-90deg)"></i>
+          </router-link>
+        </div>
+      </div>
     </section>
     <edit-dp @close="editModal = false" @uploaded="handleUpload()" v-if="editModal"/>
   </section>

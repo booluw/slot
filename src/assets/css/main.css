@@ -355,6 +355,28 @@ a:hover {
           margin-block-end: 1rem;
 }
 
+.card--profile {
+  display: block;
+  border-radius: 2rem;
+  padding: 2rem;
+  background-color: white;
+  color: #0E8B6B;
+  border: 0.2rem solid #0E8B6B;
+}
+
+.card--profile .card__heading {
+  text-transform: lowercase;
+  margin: 0 0 10rem;
+}
+
+.card--profile .card__heading::before {
+  display: none;
+}
+
+.card--profile .card__icon {
+  font-size: 3rem;
+}
+
 .card__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -640,6 +662,19 @@ a:hover {
 .section {
   padding: 0 2rem 5rem;
   min-height: 100vh;
+}
+
+.section__row-scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-height: 25rem;
+}
+
+.profile {
+  min-height: auto;
 }
 
 .profile__img {

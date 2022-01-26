@@ -3,6 +3,26 @@
   padding: 2rem 0;
   margin-block-end: 1rem;
 
+  &--profile {
+    display: block;
+    border-radius: 2rem;
+    padding: 2rem;
+    background-color: white;
+    color: $primary-color;
+    border: .2rem solid $primary-color;
+
+    & .card__heading {
+      text-transform: lowercase;
+      margin: 0 0 10rem;
+
+      &::before {display: none;}
+    }
+
+    & .card__icon {
+      font-size: 3rem;
+    }
+  }
+
   &__header {
     display: flex;
     align-items: center;

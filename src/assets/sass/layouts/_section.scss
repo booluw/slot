@@ -1,4 +1,11 @@
 .section {
   padding: 0 2rem 5rem;
   min-height: 100vh;
+
+  &__row-scroll {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: 25rem;
+  }
 }
