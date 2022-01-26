@@ -3,11 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import { Axios } from 'axios'
+import axios from 'axios'
 import wb from "./registerServiceWorker"
 
 Vue.prototype.$workbox = wb
-Vue.prototype.$https = Axios
+Vue.prototype.$axios = axios
 
 import VueSweetalert2 from 'vue-sweetalert2'
 import moment from 'moment'

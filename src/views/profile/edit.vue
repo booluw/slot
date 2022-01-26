@@ -29,15 +29,13 @@ export default {
     ...mapActions(['updateUserSetting']),
     handleFileChange(event) {
       this.image = event.target.files[0]
-      console.log(this.image)
     },
     uploadImage() {
       let formData = new FormData()
       formData.append('upload_preset', 'slotImages')
       formData.append('folder', 'profile')
       formData.append('file', this.image)
-      console.log(formData.get('upload_preset'))
-      Axios.post('https://api.cloudinary.com/v1_1/booluw/upload', formData).then((response) => {
+      this.$http.post('https://api.cloudinary.com/v1_1/booluw/upload', formData).then((response) => {
         this.url = response.data.url
         this.updateUserSetting(this.url)
       }).catch(error => {

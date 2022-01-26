@@ -236,6 +236,25 @@ a:hover {
   min-width: 70%;
 }
 
+.input-group__file {
+  padding: 0 gap(m);
+  width: 100%;
+  font-size: 2rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.input-group__file::-webkit-file-upload-button {
+  visibility: hidden;
+  margin-left: 10px;
+  padding: 0;
+  height: 50px;
+  width: 0;
+}
+
 .input-group__textarea {
   -webkit-margin-before: 2rem;
           margin-block-start: 2rem;
@@ -517,6 +536,42 @@ a:hover {
   color: white;
 }
 
+.modal {
+  background-color: white;
+  padding: 2rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  height: 60vh;
+}
+
+.modal .header {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  padding: 0;
+  margin: 0 0 5rem;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;
@@ -588,7 +643,10 @@ a:hover {
 }
 
 .profile__img {
+  display: block;
+  margin: 0 auto;
   width: 100%;
+  min-height: 20rem;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;

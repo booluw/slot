@@ -1,7 +1,10 @@
 .profile {
 
   &__img {
+    display: block;
+    margin: 0 auto;
     width: 100%;
+    min-height: 20rem;
     height: auto;
     object-fit: contain;
     background-color: lighten($primary-color, 60);

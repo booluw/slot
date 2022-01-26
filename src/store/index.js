@@ -185,8 +185,7 @@ export default new Vuex.Store({
           })
       })
     },
-    updateUserSetting({ commit, state }, payload) {
-      console.log(payload)
+    updateUserImage({ commit, state }, payload) {
       return new Promise((resolve, reject) => {
         db.collection('users').doc(state.userRef).update({
           img: payload
