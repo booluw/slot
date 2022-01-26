@@ -25,14 +25,6 @@ const routes = [
         meta: {
           requiresAuth: true
         }
-      },
-      {
-        name: 'Settingspage',
-        path: '/settings',
-        component: () => import('../views/ExploreSlots.vue'),
-        meta: {
-          requiresAuth: true
-        }
       }
     ]
   },
@@ -57,6 +49,22 @@ const routes = [
           requiresAuth: true
         }
       },
+      {
+        name: 'Settingspage',
+        path: '/settings',
+        component: () => import('../views/Settings.vue'),
+        meta: {
+          requiresAuth: true
+        }
+      },
+      {
+        name: 'EditSettings',
+        path: '/edit-profile',
+        component: () => import('../views/profile/edit.vue'),
+        meta: {
+          requiresAuth: true
+        }
+      }
     ]
   },
   {

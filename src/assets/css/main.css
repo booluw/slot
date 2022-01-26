@@ -450,6 +450,73 @@ a:hover {
   font-weight: 900;
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropdown__toggler {
+  font-size: 3rem;
+}
+
+.dropdown__toggler:hover ~ .dropdown__content {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.dropdown__content {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  left: -15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  background-color: white;
+  border-radius: 1rem;
+  border: 0.1rem solid rgba(14, 139, 107, 0.3);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  -webkit-transition: -webkit-clip-path 300ms ease-in-out;
+  transition: -webkit-clip-path 300ms ease-in-out;
+  transition: clip-path 300ms ease-in-out;
+  transition: clip-path 300ms ease-in-out, -webkit-clip-path 300ms ease-in-out;
+  overflow: hidden;
+}
+
+.dropdown__link {
+  font-size: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem 1rem;
+  -webkit-margin-after: .2rem;
+          margin-block-end: .2rem;
+  background-color: white;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+.dropdown__link:nth-child(odd) {
+  border-bottom: 0.1rem solid rgba(14, 139, 107, 0.3);
+}
+
+.dropdown__link .lni {
+  font-size: 2rem;
+}
+
+.dropdown__link:hover {
+  background-color: #0E8B6B;
+  color: white;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;
@@ -518,5 +585,44 @@ a:hover {
 .section {
   padding: 0 2rem 5rem;
   min-height: 100vh;
+}
+
+.profile__img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: #d1faf0;
+  padding: 1rem;
+  border-radius: 4rem;
+  border: 1rem solid #ecfdf9;
+}
+
+.profile__hero {
+  position: relative;
+  background-color: white;
+  padding: 0 0 1rem;
+  overflow: hidden;
+}
+
+.profile__skew {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10rem;
+  -webkit-transform: skew(0deg, -20deg);
+          transform: skew(0deg, -20deg);
+  background-color: #13b98f;
+}
+
+.profile__heading {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.profile__heading--small {
+  color: grey;
+  font-size: 2rem;
+  font-weight: normal;
 }
 /*# sourceMappingURL=main.css.map */

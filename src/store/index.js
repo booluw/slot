@@ -11,7 +11,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: {},
-    toEditData: {}
+    toEditData: {},
+    userRef: ''
   },
   mutations: {
     SAVE_USER_DATA (state, payload) {
@@ -23,6 +24,9 @@ export default new Vuex.Store({
     },
     EDIT_SLOT (state, payload) {
       state.toEditData = payload
+    },
+    UPDATE_USER_REF(state, payload) {
+      state.userRef = payload
     }
   },
   actions: {
@@ -34,7 +38,6 @@ export default new Vuex.Store({
       })
     },
     registerUser({ commit }, payload) {
-      console.log(payload.mail)
       return new Promise((resolve, reject) => {
         firebase.auth().createUserWithEmailAndPassword(payload.mail, payload.password)
           .then((userCredential) => {
@@ -160,6 +163,33 @@ export default new Vuex.Store({
           });
         }).catch( error => {
           reject(error)
+        })
+      })
+    },
+    fetchCurrentUser({ commit }, payload) {
+      if(!payload) {
+        payload = firebase.auth().currentUser.uid
+      }
+      return new Promise((resolve, reject) => {
+        db.collection('users').where('uid', '==', payload)
+          .get().then( querySnapshot => {
+            querySnapshot.forEach(doc => {
+              let temp = doc.data()
+              if (temp.uid === firebase.auth().currentUser.uid) {
+                commit('UPDATE_USER_REF', doc.id)
+              }
+              resolve(doc.data())
+            })
+          }).catch( error => {
+            reject(error)
+          })
+      })
+    },
+    updateUserSetting({ commit, state }, payload) {
+      console.log(payload)
+      return new Promise((resolve, reject) => {
+        db.collection('users').doc(state.userRef).update({
+          img: payload
         })
       })
     }

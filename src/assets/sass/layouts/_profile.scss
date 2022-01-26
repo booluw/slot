@@ -1,0 +1,40 @@
+.profile {
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: lighten($primary-color, 60);
+    padding: 1rem;
+    border-radius: 4rem;
+    border: 1rem solid lighten($primary-color, 66);
+  }
+
+  &__hero {
+    position: relative;
+    background-color: white;
+    padding: 0 0 1rem;
+    overflow: hidden;
+  }
+
+  &__skew {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10rem;
+    // padding: 5rem;
+    transform: skew(0deg, -20deg);
+    background-color: lighten($primary-color, 10);
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    text-align: center;
+
+    &--small {
+      color: grey;
+      font-size: 2rem;
+      font-weight: normal;
+    }
+  }
+}
