@@ -1,29 +1,11 @@
 # slot
+_The social media without the weird parts_
+
+You can contribute by:
+- Creating an account
+- Find any bug, feature to add/work on
+- Create a new issue with a proper tag
+
 
 ## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Run ```yarn install``` to install all dependencies needed for development. ```yarn serve``` creates a server for local testing and hot reload.
