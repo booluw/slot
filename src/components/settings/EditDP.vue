@@ -15,7 +15,7 @@
           @change="handleFileChange"  
         />
         </label>
-      <button class="btn btn--cta btn--full-width" type="submit">
+      <button class="btn btn--cta btn--full-width" type="submit" :disabled="loading">
         submit
         <i class="btn__icon btn__icon--rotate lni lni-spinner" v-if="loading"></i>
       </button>
@@ -40,7 +40,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['updateUserSetting']),
+    ...mapActions(['updateUserImage']),
     handleFileChange(event) {
       this.image = event.target.files[0]
     },
@@ -57,7 +57,8 @@ export default {
 
       this.$axios.post('https://api.cloudinary.com/v1_1/booluw/upload', formData).then((response) => {
         this.url = response.data.url
-        this.updateUserSetting(this.url).then(() => {
+        this.updateUserImage(this.url).then(() => {
+          console.log('Image Uploaded')
           this.$emit('uploaded')
         }).catch(error => {
           this.$swal({

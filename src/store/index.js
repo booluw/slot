@@ -189,6 +189,10 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         db.collection('users').doc(state.userRef).update({
           img: payload
+        }).then(() => {
+          resolve()
+        }).catch( error => {
+          reject(error)
         })
       })
     }
